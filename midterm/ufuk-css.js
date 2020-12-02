@@ -1,5 +1,4 @@
 window.addEventListener("load",pageLoaded);
-alert("working");
 function pageLoaded(){
     let sliders = document.getElementsByClassName("slider");
     for (let i = 0; i < sliders.length; i++)
