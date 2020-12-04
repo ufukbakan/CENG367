@@ -867,6 +867,14 @@ input[type="text"]{
 }
 
 @media (prefers-color-scheme: dark) {
+
+    html{
+        background-color: #111111;
+    }
+    body{
+        color: #ffffff;
+    }
+
     #mobile-menu .bar{
         background-color: #ffffff;
     }
