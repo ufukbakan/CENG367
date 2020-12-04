@@ -91,7 +91,7 @@ function pageLoaded(){
     for(let i = 0; i < dropDownOwners.length; i++)
     {
         dropDownOwners[i].addEventListener("click",mobileNavbarClickHandle);
-        dropDownOwners[i].addEventListener("touchend",mobileNavbarClickHandle);
+        //dropDownOwners[i].addEventListener("touchend",mobileNavbarClickHandle);
     }
 }
 
