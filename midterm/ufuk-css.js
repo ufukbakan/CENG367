@@ -97,7 +97,8 @@ function pageLoaded(){
 
 function mobileNavbarClickHandle(e)
 {
-    if(e.target.classList.contains("has-dropdown")) this.classList.toggle("mobile-click");
+    if(document.elementFromPoint(e.clientX,e.clientY).classList.contains("has-dropdown"))
+        this.classList.toggle("mobile-click");
 }
 
 /* not necessary anymore tricked in css
