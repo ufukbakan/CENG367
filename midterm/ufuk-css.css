@@ -861,6 +861,17 @@ input[type="text"]{
     overflow-y: auto;
 }
 
+#references{
+    margin-top: 1em;
+    font-size: 0.7em;
+}
+
+@media (prefers-color-scheme: dark) {
+    #mobile-menu .bar{
+        background-color: #ffffff;
+    }
+}
+
 @media (max-width: 1260px){
 
 #mobile-menu{
