@@ -148,7 +148,7 @@ function sliderGoNth(slider, n){
     let stripe = slider.querySelector(".slider-stripe");
     stripe.style.transformOrigin = (2*n+1)*(100/totalSlides/2) + "% 50%";
     //stripe.style.transform = "rotate(" +n*360+ "deg)" + "translateX(" + (n*(-100))  +  "%)" ;
-    //alternative rotating algorythm with sin function:
+    //alternative rotating algorithm with sin function:
     stripe.style.transform = "rotate(" + Math.sin(n*(Math.PI/2))*360 + "deg)" + "translateX(" + (n*(-100))  +  "%)" ;
 
     let indicators = slider.querySelectorAll(".slide-indicator");
