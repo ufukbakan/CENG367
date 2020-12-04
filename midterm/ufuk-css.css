@@ -892,6 +892,10 @@ input[type="text"]{
     .dropdown-menu{
         background-color: rgba(0,0,0,0.4);
     }
+
+    #ataturk{
+        filter: invert(0.5);
+    }
 }
 
 @media (max-width: 1260px){
