@@ -1,5 +1,7 @@
 window.addEventListener("load",pageLoaded);
 window.addEventListener("scroll",scrollListener);
+window.addEventListener("resize",ifSwitchDesktop);
+
 /* not necessary anymore tricked in css
 window.addEventListener("resize",() => setTabPageSizes(null));
 */
@@ -83,6 +85,13 @@ function pageLoaded(){
     }
 
     document.querySelector("#mobile-menu").addEventListener("click",toggleMobileMenu);
+
+    let dropDownOwners = document.getElementsByClassName("has-dropdown");
+
+    for(let i = 0; i < dropDownOwners.length; i++)
+    {
+        dropDownOwners[i].addEventListener("click",function(e){ if(e.target.classList.contains("has-dropdown")) this.classList.toggle("mobile-click"); });
+    }
 }
 
 /* not necessary anymore tricked in css
@@ -218,5 +227,21 @@ function toggleMobileMenu(){
         else{
             document.body.style.overflow = "auto";
         }
+    }
+}
+
+function closeMobileMenu(){
+    document.querySelector(".menu").classList.remove("mobile-open");
+    if(document.querySelector("#mobile-menu").classList.contains("mobile-open"))
+    {
+        document.querySelector("#mobile-menu").classList.remove("mobile-open")
+        document.body.style.overflow = "auto";
+    }
+}
+
+function ifSwitchDesktop(){
+    if(window.innerWidth > 1260)
+    {
+        closeMobileMenu();
     }
 }

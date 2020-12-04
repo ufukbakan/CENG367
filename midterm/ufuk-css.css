@@ -146,7 +146,7 @@ footer{
     line-height: 1.4em;
     height: 1.4em;
     width: 270px;
-    padding: 1em 0;
+    padding: 1em 0.4em;
     margin-left: auto;
     margin-right: auto;
     transition: color 0.5s, background-color 0.5s;
@@ -176,17 +176,19 @@ footer{
     box-sizing: content-box;
 }
 
-.has-dropdown:hover{
-    border-top: 2px solid var(--gazi-dark-blue);
-}
-
-.dark .has-dropdown:hover{
-    border-top: 2px solid #ffffff;
-}
-
-.has-dropdown:hover > .dropdown-menu{
-    pointer-events: initial;
-    opacity: 1;
+@media (hover: hover) and (pointer: fine) {
+    .has-dropdown:hover{
+        border-top: 2px solid var(--gazi-dark-blue);
+    }
+    
+    .dark .has-dropdown:hover{
+        border-top: 2px solid #ffffff;
+    }
+    
+    .has-dropdown:hover > .dropdown-menu{
+        pointer-events: initial;
+        opacity: 1;
+    }
 }
 
 /* Disabled for now unnecessary
@@ -522,6 +524,8 @@ slide img{
     position: fixed;
     padding-top: 40px;
     padding-bottom: 10px;
+    padding-left: 5px;
+    padding-right: 5px;
     z-index: 4;
     min-width: 400px;
     min-height: 400px;
@@ -560,6 +564,9 @@ slide img{
 
 .full-center{
     position: absolute;
+    padding-left: 5px;
+    padding-right: 5px;
+    box-sizing: border-box;
     left: 50%;
     top: 50%;
     transform: translate(-50%,-50%);
@@ -866,6 +873,11 @@ input[type="text"]{
     display: none;
 }
 
+.desktop-menu > li{
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
 .mobile-open .desktop-menu{
     display: block;
 }
@@ -881,9 +893,18 @@ input[type="text"]{
     margin-left: 50px;
 }
 
+.dropdown-menu li{
+    height: initial;
+    width: initial;
+    margin: 0;
+    margin-bottom: 0.2em;
+    line-height: initial;
+}
+
 .menu .dropdown-menu{
     position: relative;
     display: none;
+    padding-top: 5px;
     border-bottom: 2px solid var(--gazi-dark-blue);
     border-right: 2px solid var(--gazi-dark-blue);
     border-left: 2px solid var(--gazi-dark-blue);
@@ -896,7 +917,7 @@ input[type="text"]{
     border-left: 2px solid #ffffff;
 }
 
-.has-dropdown:hover > .dropdown-menu{
+.mobile-click > .dropdown-menu{
     pointer-events: initial;
     opacity: 1;
     display: block;
