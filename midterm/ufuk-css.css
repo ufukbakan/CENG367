@@ -689,14 +689,17 @@ input[type="text"]{
 
 .tab-content{
     width: 100%;
+    display: none;/*
     position: absolute;
     opacity: 0;
-    pointer-events: none;
+    pointer-events: none;*/
 }
 .tab-content.display{
+    display: block;
+    /*
     position: relative;
     opacity: 1;
-    pointer-events: initial;
+    pointer-events: initial;*/
 }
 
 
