@@ -870,13 +870,27 @@ input[type="text"]{
 
     html{
         background-color: #111111;
+        color: #ffffff;
     }
     body{
+        background-color: #111111;
         color: #ffffff;
     }
 
     #mobile-menu .bar{
         background-color: #ffffff;
+    }
+
+    #Quick-links-box img{
+        filter: invert(0);
+    }
+
+    .menu{
+        background-color: #111111;
+    }
+
+    .dropdown-menu{
+        background-color: rgba(0,0,0,0.4);
     }
 }
 
