@@ -90,8 +90,14 @@ function pageLoaded(){
 
     for(let i = 0; i < dropDownOwners.length; i++)
     {
-        dropDownOwners[i].addEventListener("click",function(e){ if(e.target.classList.contains("has-dropdown")) this.classList.toggle("mobile-click"); });
+        dropDownOwners[i].addEventListener("click",mobileNavbarClickHandle);
+        dropDownOwners[i].addEventListener("touchend",mobileNavbarClickHandle);
     }
+}
+
+function mobileNavbarClickHandle(e)
+{
+    if(e.target.classList.contains("has-dropdown")) this.classList.toggle("mobile-click");
 }
 
 /* not necessary anymore tricked in css
