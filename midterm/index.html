@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Gazi University</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel='stylesheet' type='text/css' href="ufuk-css.css">
+    <script type="text/javascript" src="ufuk-css.js"></script>
+</head>
+
+<body>
+    <div id="loading-modal" class="modal open full-size">
+        <div class="full-center">
+            <div class="progress-bar">
+                <div id="loading-bar" class="bar"></div>
+            </div>
+            <h3>If you stuck on this loading screen, javascript file couldn't loaded properly. Try replacing script src with commented src</h3>
+        </div>
+    </div>
+
+    <div id="top-level">
+        <a href="#"><img id="logo" src="assets/logo100.png" height="100"/>
+        <h1>Gazi University</h1></a>
+        <img id="ataturk" src="assets/ataturk.png" height="100"/>
+        <ul id="top-right-area">
+            <li id="change-language" style="position: relative;" class="has-dropdown">EN/TR <ul class="dropdown-menu small"><li>English</li><li>Turkish</li></ul> </li>
+            <li id="menu-share">Share</li>
+        </ul>
+    </div>
+
+    <div class="menu">
+        <ul class="nav-menu">
+            <!-- <li>Home</li> -->
+            <li id="mobile-menu">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </li>
+            <span class="desktop-menu">
+                <li class="has-dropdown" onClick="return true;">Gazi University    
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Management</a></li>
+                        <li><a href="#">Academic Units</a></li>
+                        <li><a href="#">Mission Vision</a></li>
+                        <li><a href="#">Gazi University History</a></li>
+                        <li><a href="#">Gazi Martyrs</a></li>
+                    </ul>
+                </li>
+                <li class="has-dropdown" onClick="return true;">Academics
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Academic Calendar</a></li>
+                        <li><a href="#">Graduate Programs</a></li>
+                        <li><a href="#">Undergraduate Programs</a></li>
+                        <li><a href="#">Vocational Colleges</a></li>
+                        <li><a href="#">Distance Education</a></li>
+                        <li><a href="#">Information Package</a></li>
+                    </ul>
+                </li>
+                <li class="has-dropdown" onClick="return true;">Student
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Student Affairs</a></li>
+                        <li><a href="#">Student Counselling Center</a></li>
+                        <li><a href="#">Disabled Advisory Unit</a></li>
+                        <li><a href="#">Student Communities</a></li>
+                        <li><a href="#">Project Office</a></li>
+                        <li><a href="#">Career Planning</a></li>
+                        <li><a href="#">Information System</a></li>
+                    </ul>
+                </li>
+                <li class="has-dropdown" onClick="return true;">International
+                    <ul class="dropdown-menu">
+                        <li><a href="#">International Students Unit</a></li>
+                        <li><a href="#">Erasmus Exchange Programme</a></li>
+                        <li><a href="#">Mevlana Exchange Programme</a></li>
+                        <li><a href="#">Protocols Unit</a></li>
+                        <li><a href="#">Information Package</a></li>
+                        <li><a href="#">About Gazi</a></li>
+                        <li><a href="#">Education in Gazi</a></li>
+                        <li><a href="#">Gazi From Student's Eye</a></li>
+                        <li><a href="#">About Ankara</a></li>
+                    </ul>
+                </li>
+                <li class="has-dropdown" onClick="return true;">Research
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Projects of Scientific Investigation</a></li>
+                        <li><a href="#">Research and Application Centers</a></li>
+                    </ul>
+                </li>
+                <li class="has-dropdown" onClick="return true;">Information Systems
+                    <ul class="dropdown-menu">
+                        <li><a href="#">EBYS</a></li>
+                        <li><a href="#">Academic Information System (ABS)</a></li>
+                        <li><a href="#">Scientific Research Projects</a></li>
+                        <li><a href="#">E-Mail</a></li>
+                    </ul>
+                </li>
+                <li class="has-dropdown" onClick="return true;">Communication
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Telephone Book</a></li>
+                        <li><a href="#">Campuses</a></li>
+                    </ul>
+                </li>
+                <li id="search-button" class="has-tooltip">Search<span class="tooltip">Click to open search modal</span></li>
+                <div class="dropdown-background"></div>
+            </span>
+        </ul>
+    </div>
+
+    <div class="modal full-size" id="search-modal">
+        <div class="full-center">
+            <div class="close-modal">&times;</div>
+            <form class="form-light-text">
+                <input type="text" placeholder="Search something." name="search">
+                <div class="input-column">
+                    <label><input type="radio" name="search-type" value="staff" checked>Search for Staff</label>
+                    <label><input type="radio" name="search-type" value="gaziweb">Search for GaziWeb</label>
+                </div>
+                <button class="primary-button">Search</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="content">
+        <div class="slider" width="70%">
+            <slide>
+                <img src="assets/gazi-slider-1.jpg">
+            </slide>
+            <slide>
+                <img src="assets/gazi-slider-2.jpg"> 
+            </slide>
+        </div>
+
+        <div class="box" width="29%">
+            <div class="tabs">
+                <div class="tab-headers">
+                    <div class="tab-header" tab="0">Activities</div>
+                    <div class="tab-header active" tab="1">Announcements</div>
+                    <div class="tab-header" tab="2">News</div>
+                </div>
+                <div class="tab-content">
+                    <div id="Activities-box" class="box" width="100%">
+                        <div class="box-li">
+                            <div class="box-li-header"><a href="#">ICMATSE 2020 International Conference On Advanced Materials Science & Engineering And High Tech Device Applications</a></div>
+                            <div class="box-li-date">02.10.2020</div>
+                        </div>
+                        <center><a href="#"><b>See all activities</b></a></center>
+                    </div>
+                </div>
+                <div class="tab-content display">
+                    <div id="Announcements-box" class="box" width="100%">
+                        <div class="announcement box-li">
+                            <div class="announcement-header box-li-header"><a href="#">Condolences to Turkish Nation</a></div>
+                            <div class="announcement-date box-li-date">24.08.2020</div>
+                        </div>
+                        <div class="announcement box-li">
+                            <div class="announcement-header box-li-header"><a href="#">To the Attention of Our Students</a></div>
+                            <div class="announcement-date box-li-date">23.08.2020</div>
+                        </div>
+                        <div class="announcement box-li">
+                            <div class="announcement-header box-li-header"><a href="#">About Entrance Exams Announcements for Rectorate (GUZEM) Instructor and Information Institute, Management Information Systems Department Research Assistant Staff Recruitment dated 13.07.202</a></div>
+                            <div class="announcement-date box-li-date">21.08.2020</div>
+                        </div>
+                        <div class="announcement box-li">
+                            <div class="announcement-header box-li-header"><a href="#">Public Announcement</a></div>
+                            <div class="announcement-date box-li-date">20.08.2020</div>
+                        </div>
+                        <div class="announcement box-li">
+                            <div class="announcement-header box-li-header"><a href="#">Special Talent Exam Locations and Hours</a></div>
+                            <div class="announcement-date box-li-date">17.08.2020</div>
+                        </div>
+                        <center><a href="#"><b>See all announcements</b></a></center>
+                    </div>
+                </div>
+                <div class="tab-content">
+                    <div id="News-box" class="box no-hover-animation" width="100%">
+                        <div class="box-li">
+                            <div class="slider" width="100%">
+                                <slide>
+                                    <img src="assets/news-1.jpg">
+                                    <div class="header-after-slide"><a href="#">A First in Industry-University Collaboration at Gazi</a></div>
+                                    <div class="text-after-slide">Gazi University, which has been selected as one of the ten research universities in 2017, continues to take important steps to develop scientific research and produce ideas. We are proud of having a university in the name of cooperation between industry and university. With the support by the Ministry of Science, Industry and Technology...</div>
+                                </slide>
+                                <slide>
+                                    <img src="assets/news-2.jpg">
+                                    <div class="header-after-slide"><a href="#">Gazi University has made a spectacular host to Special Olympics with the slogan "Game together life together</a></div>
+                                    <div class="text-after-slide">Gazi University hosted Gazi University & Special Olympics Regional Games for the second time with the collaboration with Gazi University and Turkey Special Athletes Education Association (TÖSSED). 180 special and partner athletes participated in the games. Gazi University Vice Rector Prof. Dr. Yaşar Aydemir, who made a speech at the ope...</div>
+                                </slide>
+                                <slide>
+                                    <img src="assets/news-3.jpg">
+                                    <div class="header-after-slide"><a href="#">Free Fast-Breaking meal for our Students</a></div>
+                                    <div class="text-after-slide">Gazi University, which attaches great importance to the social services aimed at the students, will provide free fast-breaking meal service to the students during the final week of  the month of Ramadan. Fast- breaking  meal will continue from May 22 until June 1 at B block student dining hall. Gazi University is still one o...</div>
+                                </slide>
+                                <slide>
+                                    <img src="assets/news-4.jpg">
+                                    <div class="header-after-slide"><a href="#">Gazi Technopark in Canada</a></div>
+                                    <div class="text-after-slide">Gazi Informatics Cluster, which operates under the Economy Ministry's "UR-GE Communication" since May 2015 with the participation of 24 companies, organized the marketing activities in Canada- Toronto between 21-28 April 2018. The organisation, which is the the first trade delegation from Turkey's information-based activit...</div>
+                                </slide>
+                            </div>
+                        </div>
+                        <center><a href="#"><b>See all news</b></a></center>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div id="Quick-links-box" class="box full-width divided no-hover-animation">
+            <div class="box-header animated"><span>Quick Links</span></div>
+            <div class="box-li"><a href="#"><img src="assets/sc-ogrencisosyal.svg">GUZEM ÖYS</a></div>
+            <div class="box-li"><a href="#"><img src="assets/sc-websitem.svg">ABS</a></div>
+            <div class="box-li"><a href="#"><img src="assets/sc-atakvim.svg">ACADEMIC CALENDAR</a></div>
+            <div class="box-li"><a href="#"><img src="assets/sc-ebys.svg">EBYS</a></div>
+            <div class="box-li"><a href="#"><img src="assets/sc-kutuphane.svg">LIBRARY</a></div>
+            <div class="box-li"><a href="#"><img src="assets/sc-kullanimkilavuzu.svg">USER GUIDE</a></div>
+            <div class="box-li"><a href="#"><img src="assets/sc-ogisleri.svg">STUDENT AFFAIRS</a></div>
+            <div class="box-li"><a href="#"><img src="assets/sc-senato.svg">SENATE DECISIONS</a></div>
+            <div class="box-li"><a href="#"><img src="assets/sc-email.svg">EMAIL</a></div>
+            <div class="box-li"><a href="#"><img src="assets/sc-gazinet.svg">GAZI.NET</a></div>
+        </div>
+        <center>
+            <div class="divide-2-columns"><!-- each box is a column inside this class -->
+                <div class="box">
+                    <div class="box-header">Campus Life</div>
+                    <div class="box-li"><a href="#">Sports & Health Centers</a></div>
+                    <div class="box-li"><a href="#">Student Clubs</a></div>
+                    <div class="box-li"><a href="#">Library</a></div>
+                    <div class="box-li"><a href="#">Social Life & Staff</a></div>
+                </div>
+                <div class="box">
+                    <div class="box-header">Research Services</div>
+                    <div class="divide-4-columns">
+                        <div class="box">
+                            <div class="box-li"><a href="#">Scientific Research Projects Unit</a></div>
+                            <div class="box-li"><a href="#">Research and Application Centers</a></div>
+                            <div class="box-li"><a href="#">Academic Criteria and Award Bureau</a></div>
+                            <div class="box-li"><a href="#">Project Coordination I.R. Center</a></div>
+                            <div class="box-li"><a href="#">Successful Project Results Platform</a></div>
+                        </div>
+                        <div class="box">
+                            <div class="box-li"><a href="#">Web of Science</a></div>
+                            <div class="box-li"><a href="#">Academic & Scientific Journals</a></div>
+                            <div class="box-li"><a href="#">Open Archives (Theses & Articles</a>)</div>
+                            <div class="box-li"><a href="#">Projects</a></div>
+                            <div class="box-li"><a href="#">External Activities</a></div>
+                        </div>
+                        <div class="box">
+                            <div class="box-li"><a href="#">Planning and Evaluation</a></div>
+                            <div class="box-li"><a href="#">Technology Transfer Office</a></div>
+                            <div class="box-li"><a href="#">Quality Commission</a></div>
+                            <div class="box-li"><a href="#">InCites</a></div>
+                            <div class="box-li"><a href="#">Information about InCites</a></div>
+                        </div>
+                        <div class="box">
+                            <div class="box-li"><a href="#">Gazi Teknopark</a></div>
+                            <div class="box-li"><a href="#">Ethics Committees</a></div>
+                            <div class="box-li"><a href="#">Surveys</a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </center>
+    </div>
+
+    <div class="footer">
+        <div class="divide-3-columns divide-equal full-width full-height">
+            <div class="box"><img class="background-image" src="assets/rektorluk_binasi_footer.svg"></div>
+            <div class="box">
+                <div class="full-center">
+                    <div id="adress">Gazi Üniversitesi Rektörlüğü 06560<br>Emniyet Mahallesi Bandırma Caddesi No:6/1 Yenimahalle/ANKARA<br>Tel: +90312 202 20 00</div>
+                    <div id="socials">
+                        <a href="#"><img src="assets/facebook.svg" class="social-icon"></a>
+                        <a href="#"><img src="assets/twitter.svg" class="social-icon"></a>
+                        <a href="#"><img src="assets/youtube.svg" class="social-icon"></a>
+                        <a href="#"><img src="assets/linkedin.svg" class="social-icon"></a>
+                        <a href="#"><img src="assets/instagram.svg" class="social-icon"></a>
+                        <a href="#"><img src="assets/mail.svg" class="social-icon"></a>
+                        <a href="#"><img src="assets/rss.svg" class="social-icon"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="box"><img class="background-image" src="assets/gazi_logo_footer.svg"></div>
+        </div>
+    </div>
+
+</body>
+
+</html>

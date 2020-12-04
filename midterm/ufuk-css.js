@@ -1,5 +1,13 @@
 window.addEventListener("load",pageLoaded);
+window.addEventListener("scroll",scrollListener);
+/* not necessary anymore tricked in css
+window.addEventListener("resize",() => setTabPageSizes(null));
+*/
+
 function pageLoaded(){
+    setTimeout(function(){ document.querySelector("#loading-bar").style.transform = "translateX(100%)";},700);
+    setTimeout(function(){ document.body.style.overflow = "auto"; document.getElementById("loading-modal").classList.remove("open"); },1400);
+
     let sliders = document.getElementsByClassName("slider");
     for (let i = 0; i < sliders.length; i++)
     {
@@ -42,7 +50,63 @@ function pageLoaded(){
         if(boxes[i].getAttribute("width") != null)
             boxes[i].style.width = boxes[i].getAttribute("width");
     }
+
+    let modalclosers = document.getElementsByClassName("close-modal");
+    for(let i = 0; i<  modalclosers.length; i++)
+    {
+        modalclosers[i].addEventListener("click",closeParentModal);
+    }
+
+    try{
+        document.getElementById("search-button").addEventListener("click",function(){
+            document.getElementById("search-modal").classList.add("open");
+            document.body.style.overflow = "hidden";
+            if(window.innerWidth <= 1260)
+            {
+                toggleMobileMenu();
+            }
+
+        })
+    }
+    catch{
+        console.log("Could'nt found search button or search modal");
+    }
+
+    /* not necessary anymore tricked in css
+    setTabPageSizes();
+    */
+
+    let tabHeaders = document.getElementsByClassName("tab-header");
+
+    for(let i = 0; i < tabHeaders.length; i++){
+        tabHeaders[i].addEventListener("click",tabClick);
+    }
+
+    document.querySelector("#mobile-menu").addEventListener("click",toggleMobileMenu);
 }
+
+/* not necessary anymore tricked in css
+function setTabPageSizes(tab=null){
+    if(tab == null)
+    {
+        let tabs = document.getElementsByClassName("tabs");
+
+        for(let i = 0; i < tabs.length; i++)
+        {
+            let maxh = 0;
+            let tabcontents = tabs[i].querySelectorAll(".tab-content.display");
+            for(let j = 0; j < tabcontents.length; j++)
+            {
+                if(tabcontents[j].clientHeight > maxh)
+                    maxh = tabcontents[j].clientHeight;
+            }
+            tabs[i].style.heightt = maxh + tabs[i].querySelector(".tab-headers").clientHeight + "px";
+        }
+    }
+    else{
+
+    }
+}*/
 
 function sliderTick(slider){
     if(slider.getAttribute("play") == "true")
@@ -63,9 +127,13 @@ function sliderTick(slider){
 function sliderGoNth(slider, n){
 
     slider.setAttribute("slide-index",n);
+    let totalSlides = slider.getAttribute("total-slides");
 
     let stripe = slider.querySelector(".slider-stripe");
-    stripe.style.transform = "translateX(" + (n*(-100))  +  "%)";
+    stripe.style.transformOrigin = (2*n+1)*(100/totalSlides/2) + "% 50%";
+    //stripe.style.transform = "rotate(" +n*360+ "deg)" + "translateX(" + (n*(-100))  +  "%)" ;
+    //alternative rotating algorythm with sin function:
+    stripe.style.transform = "rotate(" + Math.sin(n*(Math.PI/2))*360 + "deg)" + "translateX(" + (n*(-100))  +  "%)" ;
 
     let indicators = slider.querySelectorAll(".slide-indicator");
 
@@ -80,18 +148,75 @@ function sliderGoNth(slider, n){
 
 }
 
-function getParentSlider(element){
-    if(element.classList.contains("slider"))
+function getParentWithClass(element,classname){
+    if(element.classList.contains(classname))
         return element;
     else
-        return getParentSlider(element.parentElement);
+        return getParentWithClass(element.parentElement,classname);
 }
 
 function indicatorClick(){
     //console.log(this.getAttribute("indicator-index"));
-    let parentSlide = getParentSlider(this);
+    let parentSlide = getParentWithClass(this,"slider");
     parentSlide.setAttribute("play","false");
     sliderGoNth(parentSlide,Number(this.getAttribute("indicator-index")));
     setTimeout(function(){ parentSlide.setAttribute("play","true") },4000);
 
+}
+
+function closeParentModal(){
+    let parentModal = getParentWithClass(this,"modal");
+    parentModal.classList.remove("open");
+    document.body.style.overflow = "auto";
+}
+
+function tabClick(){
+    setTabActive(this);
+}
+
+function setTabActive(sender)
+{
+    let tabswrapper = getParentWithClass(sender,"tabs");
+    let activeTabHeaders = tabswrapper.querySelectorAll(".tab-header.active");
+    let currentTabs = tabswrapper.querySelectorAll(".tab-content.display");
+
+    for(let i = 0; i < activeTabHeaders.length; i++)
+    {
+        activeTabHeaders[i].classList.remove("active");
+    }
+    for(let i = 0; i < currentTabs.length; i++)
+    {
+        currentTabs[i].classList.remove("display");
+    }
+
+    let tabindex = Number(sender.getAttribute("tab"));
+    //console.log("sender: " + sender.getAttribute("tab"));
+    sender.classList.add("active");
+    tabswrapper.querySelectorAll(".tab-content")[tabindex].classList.add("display");
+}
+
+function scrollListener(){
+    let menu = document.querySelector(".menu");
+    if(menu.getBoundingClientRect().top == 0 && !menu.classList.contains("dark"))
+    {
+        menu.classList.add("dark");
+    }
+    else if(menu.getBoundingClientRect().top != 0 && menu.classList.contains("dark"))
+    {
+        menu.classList.remove("dark");
+    }
+}
+
+function toggleMobileMenu(){
+    if(window.innerWidth <= 1260){
+        document.querySelector(".menu").classList.toggle("mobile-open");
+        document.querySelector("#mobile-menu").classList.toggle("mobile-open");
+        if(document.querySelector("#mobile-menu").classList.contains("mobile-open"))
+        {
+            document.body.style.overflow = "hidden";
+        }
+        else{
+            document.body.style.overflow = "auto";
+        }
+    }
 }
